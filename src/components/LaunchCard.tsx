@@ -11,7 +11,7 @@ export function LaunchCard({ launch, onSeeMore }: LaunchCardProps) {
     <Card shadow="sm" padding="md" radius="md" withBorder>
       <Card.Section>
         <Image
-          src={launch.links?.mission_patch_small || undefined}
+          src={launch.links?.mission_patch || launch.links?.mission_patch_small || undefined}
           height={200}
           alt={launch.mission_name}
           fallbackSrc="https://placehold.co/200x200?text=No+Image"

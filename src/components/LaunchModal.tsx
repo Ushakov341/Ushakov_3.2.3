@@ -87,6 +87,24 @@ export function LaunchModal({ launch, onClose }: LaunchModalProps) {
                 <p className="text-gray-600">{launch.rocket.rocket_name}</p>
               </div>
 
+              {launch.launch_date_utc && (
+                <div>
+                  <h3 className="font-semibold text-gray-700 mb-1">Launch date:</h3>
+                  <p className="text-gray-600">
+                    {new Date(launch.launch_date_utc).toLocaleDateString()}
+                  </p>
+                </div>
+              )}
+
+              {launch.launch_success !== undefined && (
+                <div>
+                  <h3 className="font-semibold text-gray-700 mb-1">Launch status:</h3>
+                  <p className={launch.launch_success ? 'text-green-600' : 'text-red-600'}>
+                    {launch.launch_success ? 'Successful' : 'Failed'}
+                  </p>
+                </div>
+              )}
+
               <div>
                 <h3 className="font-semibold text-gray-700 mb-1">Details:</h3>
                 <p className="text-gray-600">
